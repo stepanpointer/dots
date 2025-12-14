@@ -1,4 +1,7 @@
 # Dotfiles
+
+- Wallpaper in the bg folder
+
 ## Screenshots
 
 ![](assets/04.scr.png) 
