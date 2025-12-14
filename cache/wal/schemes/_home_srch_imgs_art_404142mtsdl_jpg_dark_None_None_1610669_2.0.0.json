@@ -1,0 +1,28 @@
+{
+    "checksum": "b02272b8bd2e94e95c9b2239e28c844c",
+    "wallpaper": "/home/srch/imgs/art/404142mtsdl.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1e180d",
+        "foreground": "#c6c5c2",
+        "cursor": "#c6c5c2"
+    },
+    "colors": {
+        "color0": "#1e180d",
+        "color1": "#6A4B32",
+        "color2": "#374246",
+        "color3": "#54524A",
+        "color4": "#6C665A",
+        "color5": "#895E41",
+        "color6": "#7C837B",
+        "color7": "#c6c5c2",
+        "color8": "#70695c",
+        "color9": "#6A4B32",
+        "color10": "#374246",
+        "color11": "#54524A",
+        "color12": "#6C665A",
+        "color13": "#895E41",
+        "color14": "#7C837B",
+        "color15": "#c6c5c2"
+    }
+}

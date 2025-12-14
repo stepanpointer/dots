@@ -1,0 +1,28 @@
+{
+    "checksum": "c7ae3bcb92b05dcb73606ad365f58f14",
+    "wallpaper": "/home/srch/imgs/bg/wal/15.birmingham-museums-trust-F8x1FC2pGqU.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#211f15",
+        "foreground": "#c7c7c4",
+        "cursor": "#c7c7c4"
+    },
+    "colors": {
+        "color0": "#211f15",
+        "color1": "#B1985B",
+        "color2": "#9F8D61",
+        "color3": "#B6A796",
+        "color4": "#C19E81",
+        "color5": "#CBB799",
+        "color6": "#CBBAA5",
+        "color7": "#c7c7c4",
+        "color8": "#74715f",
+        "color9": "#B1985B",
+        "color10": "#9F8D61",
+        "color11": "#B6A796",
+        "color12": "#C19E81",
+        "color13": "#CBB799",
+        "color14": "#CBBAA5",
+        "color15": "#c7c7c4"
+    }
+}

@@ -1,1 +1,176 @@
-/home/srch/.config/sway/config
+input * {
+    xkb_layout "us,br"
+    xkb_variant "intl,"
+    xkb_options "grp:alt_shift_toggle,caps:backspace,compose:ralt"
+}
+input type:touchpad {
+    tap enabled
+}
+
+input "type:keyboard" xkb_model "pc101"
+input "type:keyboard" repeat_delay 200
+input "type:keyboard" repeat_rate  60
+
+set $mod Mod4
+
+# autostart
+exec --no-startup-id $HOME/.local/bin/i3a-master-stack --stack=dwm --stack-size=45
+exec --no-startup-id syncthing serve --no-browser --logfile=default
+exec --no-startup-id dunst 
+exec --no-startup-id copyq --start-server
+# exec --no-startup-id wal -R
+
+exec swayidle -w \
+	timeout 1800 'swaylock -f' \
+
+# appearance
+include "$HOME/.cache/wal/colors-sway"
+
+font pango:JetBrainsMono NFM 10
+seat * xcursor_theme Nordzy-cursors 24
+
+focus_follows_mouse no
+focus_wrapping      no
+
+gaps inner 5px
+
+default_border pixel 1
+default_floating_border pixel 1
+smart_borders off
+smart_gaps off
+hide_edge_borders none
+
+for_window [app_id="com.github.hluk.copyq"] floating enable
+
+# client.focused          #88C0D0 #3B4252 #D8DEE9 #88C0D0 #88C0D0
+# client.focused_inactive #4C566A #3B4252 #D8DEE9 #4C566A #4C566A
+# client.unfocused        #4C566A #3B4252 #D8DEE9 #4C566A #4C566A
+# client.urgent           #B48EAD #B48EAD #ECEFF4 #B48EAD #B48EAD
+# client.background       #3B4252
+client.focused          $color5 $background $foreground $color5 $color5
+client.unfocused        $color1 $background $foreground $background
+client.focused_inactive $color2 $background $foreground $background
+client.urgent           $color6 $background $foreground $color6 $color6
+client.background       $background
+output "*" bg $wallpaper fill
+bar { 
+  swaybar_command waybar 
+}
+
+# applications
+bindsym $mod+d      exec --no-startup-id $HOME/.config/rofi/scripts/launcher_t1
+bindsym $mod+Escape exec --no-startup-id $HOME/.config/rofi/scripts/powermenu_t1
+bindsym $mod+b      exec wezterm start -- btop
+bindsym $mod+Return exec wezterm start
+bindsym $mod+n      exec wezterm start -- nvim
+bindsym $mod+e      exec thunar
+bindsym $mod+w      exec brave-browser-stable --password-store=basic
+
+# system shortcuts
+bindsym --locked XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
+bindsym --locked XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
+bindsym --locked XF86AudioMute         exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+bindsym --locked XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
+bindsym $mod+Shift+Delete exec --no-startup-id swaylock
+bindsym $mod+v            exec --no-startup-id copyq menu
+bindsym Print             exec --no-startup-id QT_QPA_PLATFORM=wayland flameshot gui
+
+# windows
+floating_modifier $mod
+
+bindsym $mod+q kill
+bindsym $mod+Shift+q kill
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+o split h
+bindsym $mod+i split v
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+t layout     tabbed
+bindsym $mod+s layout     toggle split
+
+bindsym $mod+Shift+space floating toggle, resize set width 900 height 600, move position center
+bindsym $mod+space       focus mode_toggle
+
+bindsym $mod+Shift+minus floating enable, resize set width 900 height 600, move position center, move scratchpad
+bindsym $mod+minus       scratchpad show
+
+bindsym $mod+m exec $HOME/.local/bin/i3a-swap
+
+# workspaces
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# i3 
+mode "resize" {
+    bindsym h resize shrink width   10 px or 10 ppt
+    bindsym j resize grow   height  10 px or 10 ppt
+    bindsym k resize shrink height  10 px or 10 ppt
+    bindsym l resize grow   width   10 px or 10 ppt
+    
+    bindsym Left     resize shrink width  10 px or 10 ppt
+    bindsym Down     resize grow   height 10 px or 10 ppt
+    bindsym Up       resize shrink height 10 px or 10 ppt
+    bindsym Right    resize grow   width  10 px or 10 ppt
+    
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r       mode "resize"
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+e exit
+

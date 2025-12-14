@@ -1,0 +1,44 @@
+# swaylock
+# pywal template
+
+font=JetBrainsMono NFM
+indicator-radius=120
+indicator-thickness=10
+
+color={background}
+
+bs-hl-color={foreground}
+caps-lock-bs-hl-color={foreground}
+caps-lock-key-hl-color={color6}
+
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+
+key-hl-color={color2}
+
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color={color4}
+
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+ring-color={foreground}
+ring-clear-color={foreground}
+ring-caps-lock-color={color1}
+ring-ver-color={color4}
+ring-wrong-color={color3}
+
+separator-color=00000000
+
+text-color={foreground}
+text-clear-color={foreground}
+text-caps-lock-color={color1}
+text-ver-color={color4}
+text-wrong-color={color3}

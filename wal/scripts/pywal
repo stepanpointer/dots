@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+de="$DESKTOP_SESSION"
+
+ln -sf "$HOME"/.cache/wal/pywal.rasi "$HOME"/.config/rofi/colors/pywal.rasi
+ln -sf "$HOME"/.cache/wal/pywal.ini "$HOME"/.config/polybar/pywal.ini
+ln -sf "$HOME"/.cache/wal/pywal.theme "$HOME"/.config/btop/themes/pywal.theme
+ln -sf "$HOME"/.cache/wal/qimgv-wal.conf "$HOME"/.config/qimgv/theme.conf
+ln -sf "$HOME"/.cache/wal/copyq-wal.ini "$HOME"/.config/copyq/themes/copyq-wal.ini
+ln -sf "$HOME"/.cache/wal/wezterm-wal.toml "$HOME"/.config/wezterm/colors/wezterm-wal.toml
+ln -sf "$HOME"/.cache/wal/dunstrc "$HOME"/.config/dunst/dunstrc
+ln -sf "$HOME"/.cache/wal/flameshot.ini "$HOME"/.config/flameshot/flameshot.ini
+ln -sf "$HOME"/.cache/wal/config "$HOME"/.config/swaylock/config
+
+cp -f "${HOME}"/.cache/wal/pywal.json "${HOME}"/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/pywal.json
+mkdir -p "${HOME}"/.config/Kvantum/pywal
+cp "${HOME}"/.cache/wal/pywal.kvconfig "${HOME}"/.config/Kvantum/pywal/pywal.kvconfig
+cp "${HOME}"/.cache/wal/pywal.svg "${HOME}"/.config/Kvantum/pywal/pywal.svg
+
+pkill dunst
+dunst &
+
+if [ "$de" = "i3" ]; then
+  pkill polybar
+  polybar &
+  i3-msg restart
+fi
+
+if [ "$de" = "sway" ]; then
+  pkill waybar
+  swaymsg reload
+fi
+
+notify-send "Colorscheme changed"

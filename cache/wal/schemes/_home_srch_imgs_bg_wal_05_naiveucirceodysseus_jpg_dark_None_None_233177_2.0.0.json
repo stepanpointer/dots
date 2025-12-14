@@ -1,0 +1,28 @@
+{
+    "checksum": "4cc970983a487a6cbee177efe5e66da0",
+    "wallpaper": "/home/srch/imgs/bg/wal/05.naiveucirceodysseus.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0c111c",
+        "foreground": "#c2c3c6",
+        "cursor": "#c2c3c6"
+    },
+    "colors": {
+        "color0": "#0c111c",
+        "color1": "#5D4735",
+        "color2": "#373D41",
+        "color3": "#3C4346",
+        "color4": "#5A5652",
+        "color5": "#916B54",
+        "color6": "#A58873",
+        "color7": "#c2c3c6",
+        "color8": "#5b6170",
+        "color9": "#5D4735",
+        "color10": "#373D41",
+        "color11": "#3C4346",
+        "color12": "#5A5652",
+        "color13": "#916B54",
+        "color14": "#A58873",
+        "color15": "#c2c3c6"
+    }
+}

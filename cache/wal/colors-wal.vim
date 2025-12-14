@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/srch/imgs/bg/wal/30.Rembrandt_-_Aristotle_with_a_Bust_of_Homer_-_WGA19232.jpg"
+let background = "#0e1521"
+let foreground = "#c2c4c7"
+let cursor     = "#c2c4c7"
+
+" Colors
+let color0  = "#0e1521"
+let color1  = "#433C42"
+let color2  = "#675549"
+let color3  = "#88613C"
+let color4  = "#8D7257"
+let color5  = "#A48C6D"
+let color6  = "#C8A171"
+let color7  = "#c2c4c7"
+let color8  = "#5d6472"
+let color9  = "#433C42"
+let color10 = "#675549"
+let color11 = "#88613C"
+let color12 = "#8D7257"
+let color13 = "#A48C6D"
+let color14 = "#C8A171"
+let color15 = "#c2c4c7"

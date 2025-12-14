@@ -1,0 +1,44 @@
+# swaylock
+# pywal template
+
+font=JetBrainsMono NFM
+indicator-radius=120
+indicator-thickness=10
+
+color=#0e1521
+
+bs-hl-color=#c2c4c7
+caps-lock-bs-hl-color=#c2c4c7
+caps-lock-key-hl-color=#C8A171
+
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+
+key-hl-color=#675549
+
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=#8D7257
+
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+ring-color=#c2c4c7
+ring-clear-color=#c2c4c7
+ring-caps-lock-color=#433C42
+ring-ver-color=#8D7257
+ring-wrong-color=#88613C
+
+separator-color=00000000
+
+text-color=#c2c4c7
+text-clear-color=#c2c4c7
+text-caps-lock-color=#433C42
+text-ver-color=#8D7257
+text-wrong-color=#88613C
