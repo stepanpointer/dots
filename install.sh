@@ -83,13 +83,6 @@ apt_install \
 
 ok "Core packages installed"
 
-# Qt theming (optional — Kvantum for pywal Qt theme)
-info "Installing Qt theming packages (optional)…"
-if sudo apt-get install -y --no-install-recommends --fix-missing qt5ct qt5-style-kvantum 2>/dev/null; then
-    ok "Qt theming installed"
-else
-    warn "Qt theming (qt5ct/kvantum) failed — skipping, Qt apps won't follow pywal colors"
-fi
 
 # unrar: try proprietary first, fall back to free alternative
 if sudo apt-get install -y --no-install-recommends unrar 2>/dev/null; then
