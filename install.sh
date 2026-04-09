@@ -77,7 +77,7 @@ apt_install \
     catdoc \
     curl wget git \
     qt5ct \
-    kvantum \
+    qt5-style-kvantum \
     fonts-jetbrains-mono
 
 ok "Core packages installed"
