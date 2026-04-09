@@ -64,20 +64,13 @@ apt_install \
     pipewire pipewire-pulse wireplumber \
     python3 python3-pip python3-pil \
     imagemagick \
-    atool \
     libarchive-tools \
     p7zip-full \
     poppler-utils \
-    mupdf-tools \
-    libimage-exiftool-perl \
-    pandoc \
     jq \
     mediainfo \
     highlight \
-    python3-pygments \
     w3m \
-    lynx \
-    catdoc \
     curl wget git \
     fonts-jetbrains-mono
 
