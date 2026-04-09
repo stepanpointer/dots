@@ -1,5 +1,5 @@
 input * {
-    xkb_layout "us,br"
+    xkb_layout "us,ru"
     xkb_variant "intl,"
     xkb_options "grp:alt_shift_toggle,caps:backspace,compose:ralt"
 }
@@ -58,13 +58,13 @@ bar {
 }
 
 # applications
-bindsym $mod+d      exec --no-startup-id $HOME/.config/rofi/scripts/launcher_t1
-bindsym $mod+Escape exec --no-startup-id $HOME/.config/rofi/scripts/powermenu_t1
-bindsym $mod+b      exec wezterm start -- btop
-bindsym $mod+Return exec wezterm start
-bindsym $mod+n      exec wezterm start -- nvim
-bindsym $mod+e      exec thunar
-bindsym $mod+w      exec brave-browser-stable --password-store=basic
+bindsym --to-code $mod+d      exec --no-startup-id $HOME/.config/rofi/scripts/launcher_t1
+bindsym --to-code $mod+Escape exec --no-startup-id $HOME/.config/rofi/scripts/powermenu_t1
+bindsym --to-code $mod+b      exec kitty btop
+bindsym --to-code $mod+Return exec kitty
+bindsym --to-code $mod+n      exec kitty nvim
+bindsym --to-code $mod+e      exec thunar
+bindsym --to-code $mod+w      exec firefox
 
 # system shortcuts
 bindsym --locked XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
@@ -74,49 +74,49 @@ bindsym --locked XF86AudioMicMute      exec --no-startup-id pactl set-source-mut
 bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
 bindsym $mod+Shift+Delete exec --no-startup-id swaylock
-bindsym $mod+v            exec --no-startup-id copyq menu
+bindsym --to-code $mod+v  exec --no-startup-id copyq menu
 bindsym Print             exec --no-startup-id QT_QPA_PLATFORM=wayland flameshot gui
 
 # windows
 floating_modifier $mod
 
-bindsym $mod+q kill
-bindsym $mod+Shift+q kill
+bindsym --to-code $mod+q kill
+bindsym --to-code $mod+Shift+q kill
 
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym --to-code $mod+h focus left
+bindsym --to-code $mod+j focus down
+bindsym --to-code $mod+k focus up
+bindsym --to-code $mod+l focus right
 
 bindsym $mod+Left  focus left
 bindsym $mod+Down  focus down
 bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym --to-code $mod+Shift+h move left
+bindsym --to-code $mod+Shift+j move down
+bindsym --to-code $mod+Shift+k move up
+bindsym --to-code $mod+Shift+l move right
 
 bindsym $mod+Shift+Left  move left
 bindsym $mod+Shift+Down  move down
 bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+o split h
-bindsym $mod+i split v
+bindsym --to-code $mod+o split h
+bindsym --to-code $mod+i split v
 
-bindsym $mod+f fullscreen toggle
-bindsym $mod+t layout     tabbed
-bindsym $mod+s layout     toggle split
+bindsym --to-code $mod+f fullscreen toggle
+bindsym --to-code $mod+t layout     tabbed
+bindsym --to-code $mod+s layout     toggle split
 
-bindsym $mod+Shift+space floating toggle, resize set width 900 height 600, move position center
-bindsym $mod+space       focus mode_toggle
+bindsym --to-code $mod+Shift+space floating toggle, resize set width 900 height 600, move position center
+bindsym --to-code $mod+space        focus mode_toggle
 
 bindsym $mod+Shift+minus floating enable, resize set width 900 height 600, move position center, move scratchpad
 bindsym $mod+minus       scratchpad show
 
-bindsym $mod+m exec $HOME/.local/bin/i3a-swap
+bindsym --to-code $mod+m exec $HOME/.local/bin/i3a-swap
 
 # workspaces
 
@@ -155,22 +155,22 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # i3 
 mode "resize" {
-    bindsym h resize shrink width   10 px or 10 ppt
-    bindsym j resize grow   height  10 px or 10 ppt
-    bindsym k resize shrink height  10 px or 10 ppt
-    bindsym l resize grow   width   10 px or 10 ppt
-    
+    bindsym --to-code h resize shrink width   10 px or 10 ppt
+    bindsym --to-code j resize grow   height  10 px or 10 ppt
+    bindsym --to-code k resize shrink height  10 px or 10 ppt
+    bindsym --to-code l resize grow   width   10 px or 10 ppt
+
     bindsym Left     resize shrink width  10 px or 10 ppt
     bindsym Down     resize grow   height 10 px or 10 ppt
     bindsym Up       resize shrink height 10 px or 10 ppt
     bindsym Right    resize grow   width  10 px or 10 ppt
-    
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
+    bindsym --to-code $mod+r mode "default"
 }
 
-bindsym $mod+r       mode "resize"
-bindsym $mod+Shift+r reload
-bindsym $mod+Shift+e exit
+bindsym --to-code $mod+r       mode "resize"
+bindsym --to-code $mod+Shift+r reload
+bindsym --to-code $mod+Shift+e exit
 

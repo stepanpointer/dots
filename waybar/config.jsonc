@@ -88,12 +88,12 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛 {usage}% {avg_frequency}GHz",
-    "on-click": "wezterm start -- btop"
+    "on-click": "kitty btop"
   },
   "memory": {
     "interval": 5,
     "format": "󰘚 {percentage}% {used}GiB",
-    "on-click": "wezterm start -- btop"
+    "on-click": "kitty btop"
   },
   "temperature": {
     "format": " {temperatureC}C",
