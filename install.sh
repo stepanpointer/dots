@@ -59,7 +59,7 @@ apt_install \
     xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
     libnotify-bin \
     pipewire pipewire-pulse wireplumber \
-    python3 python3-pip python3-pillow \
+    python3 python3-pip python3-pil \
     imagemagick \
     atool \
     libarchive-tools \
