@@ -50,9 +50,7 @@ apt_install \
     btop \
     thunar \
     fzf \
-    copyq \
     syncthing \
-    flameshot \
     grim slurp \
     wl-clipboard \
     brightnessctl \
@@ -75,6 +73,15 @@ apt_install \
     fonts-jetbrains-mono
 
 ok "Core packages installed"
+
+# Qt apps — installed separately since they can conflict on broken systems
+for pkg in copyq flameshot; do
+    if sudo apt-get install -y --no-install-recommends --fix-missing "$pkg" 2>/dev/null; then
+        ok "$pkg installed"
+    else
+        warn "$pkg failed to install — skipping (Qt dependency conflict)"
+    fi
+done
 
 
 # unrar: try proprietary first, fall back to free alternative
