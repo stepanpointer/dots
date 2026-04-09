@@ -63,7 +63,6 @@ apt_install \
     imagemagick \
     atool \
     libarchive-tools \
-    unrar \
     p7zip-full \
     poppler-utils \
     mupdf-tools \
@@ -82,6 +81,15 @@ apt_install \
     fonts-jetbrains-mono
 
 ok "Core packages installed"
+
+# unrar: try proprietary first, fall back to free alternative
+if sudo apt-get install -y --no-install-recommends unrar 2>/dev/null; then
+    ok "unrar (non-free) installed"
+elif sudo apt-get install -y --no-install-recommends unrar-free 2>/dev/null; then
+    ok "unrar-free installed"
+else
+    warn "Neither unrar nor unrar-free found — RAR preview in ranger won't work"
+fi
 
 # ── 4. neovim (Debian ships an old version, grab latest .deb from GitHub) ─────
 if ! has nvim || [[ "$(nvim --version | head -1 | grep -oP '\d+\.\d+')" < "0.9" ]]; then
