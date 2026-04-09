@@ -26,6 +26,9 @@ apt_install() {
 # ── 1. system update ──────────────────────────────────────────────────────────
 info "Updating package lists…"
 sudo apt-get update -qq
+sudo dpkg --configure -a
+sudo apt-get install -f -y
+sudo apt-get autoremove -y
 
 # ── 2. enable non-free for unrar ──────────────────────────────────────────────
 if ! grep -q "non-free" /etc/apt/sources.list 2>/dev/null && \
@@ -76,11 +79,17 @@ apt_install \
     lynx \
     catdoc \
     curl wget git \
-    qt5ct \
-    qt5-style-kvantum \
     fonts-jetbrains-mono
 
 ok "Core packages installed"
+
+# Qt theming (optional — Kvantum for pywal Qt theme)
+info "Installing Qt theming packages (optional)…"
+if sudo apt-get install -y --no-install-recommends --fix-missing qt5ct qt5-style-kvantum 2>/dev/null; then
+    ok "Qt theming installed"
+else
+    warn "Qt theming (qt5ct/kvantum) failed — skipping, Qt apps won't follow pywal colors"
+fi
 
 # unrar: try proprietary first, fall back to free alternative
 if sudo apt-get install -y --no-install-recommends unrar 2>/dev/null; then
