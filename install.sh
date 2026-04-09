@@ -20,7 +20,7 @@ has() { command -v "$1" &>/dev/null; }
 
 apt_install() {
     info "apt: $*"
-    sudo apt-get install -y --no-install-recommends "$@"
+    sudo apt-get install -y --no-install-recommends --fix-missing "$@"
 }
 
 # ── 1. system update ──────────────────────────────────────────────────────────
